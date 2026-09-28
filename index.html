@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>都市传说是真的？</title>
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="assets/campus_night.webp" type="image/webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">都市传说是真的？</div>
+  <nav class="tools">
+    <button id="logBtn" type="button">☰<span>回看</span></button>
+    <button id="chapterBtn" type="button">✦<span>章节</span></button>
+    <button id="helpBtn" type="button">?<span>帮助</span></button>
+  </nav>
+</header>
+<main id="stage">
+  <div id="bg" class="background"></div>
+  <div class="vignette"></div>
+
+  <section id="cover" class="cover">
+    <div class="cover-copy">
+      <p class="eyebrow"><i></i>AN INTERACTIVE STORY</p>
+      <h1 class="hero-title"><span>都市传说</span><span>是真的？</span></h1>
+      <p class="cover-line">能看见鬼魂的少年，打不破的少女。<br>用更合理的推理瓦解都市传说，维护这座城市的安宁。</p>
+      <div class="cover-actions">
+        <button id="startBtn" class="primary" type="button">开始故事 <span>→</span></button>
+        <button id="continueBtn" class="continue" type="button" hidden>继续上一次 <span>↺</span></button>
+      </div>
+      <p class="cover-note">点击 / 空格推进 · 进度自动保存在本机<br><span>A SHORT INTERACTIVE VISUAL NOVEL</span></p>
+    </div>
+  </section>
+
+  <section id="play" hidden>
+    <div class="chapter-label"><span id="chIndex"></span><h2 id="chTitle"></h2><p id="chLoc"></p></div>
+    <div id="objective" class="objective" hidden><small>此刻</small><span id="objText"></span></div>
+
+    <div id="hotspots"></div>
+
+    <div class="inventory">
+      <small>物品</small>
+      <div id="items"></div>
+      <span class="inventory-note">先选物品，再点场景中的发光处</span>
+    </div>
+
+    <div id="dialogue" class="dialogue">
+      <div class="dialogue-head"><span id="speaker"></span><small id="moment"></small></div>
+      <p id="lineText" class="line-text"></p>
+      <div id="choices" class="choices"></div>
+      <button id="nextBtn" class="next" type="button">点击继续 <span>↓</span></button>
+    </div>
+    <div id="ending" class="ending" hidden>
+      <span id="endingTag" class="ending-tag"></span>
+      <h2 id="endingTitle"></h2>
+      <p id="endingText"></p>
+      <div class="panel-actions">
+        <button id="replayBtn" class="small-btn" type="button">再玩一次</button>
+        <button id="endingChapterBtn" class="small-btn" type="button">回到章节</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><span>都市传说是真的？ · interactive visual novel</span><span>空格 / Enter 推进 · Esc 关闭面板</span></footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-shade" data-close></div>
+  <div class="modal-card">
+    <button id="closeModal" class="close" type="button" aria-label="关闭">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script src="story.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
