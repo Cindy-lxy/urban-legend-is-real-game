@@ -125,3 +125,99 @@ body{min-height:100dvh}
   .inventory{bottom:8px}
   .chapter-label{top:14px}
 }
+
+/* Responsive pass v2: wide desktop, iPad and phones */
+@media(min-width:1440px){
+  .topbar{padding-inline:max(40px,calc((100vw - 1680px)/2 + 40px))}
+  .cover-copy{left:max(8%,calc((100vw - 1680px)/2 + 96px));max-width:680px}
+  .dialogue{left:50%;right:auto;width:min(1420px,84vw);transform:translateX(-50%)}
+  .chapter-label{left:max(40px,calc((100vw - 1680px)/2 + 40px))}
+  .objective{right:max(40px,calc((100vw - 1680px)/2 + 40px))}
+  .inventory{left:max(40px,calc((100vw - 1680px)/2 + 40px));right:max(40px,calc((100vw - 1680px)/2 + 40px))}
+}
+@media(min-width:601px) and (max-width:1100px){
+  .topbar{padding:0 24px}
+  .tools{gap:10px}
+  .cover-copy{left:7%;right:7%;max-width:620px}
+  .hero-title{font-size:clamp(54px,8vw,72px);letter-spacing:9px}
+  .chapter-label{left:28px;top:24px}
+  .objective{right:28px;top:24px;max-width:270px}
+  .dialogue{left:5%;right:5%;padding:22px 26px}
+  .inventory{left:28px;right:28px}
+  .modal-card{width:min(760px,90vw);padding:34px}
+  .ending{padding:12% 8%}
+}
+@media(min-width:601px) and (max-width:900px) and (orientation:portrait){
+  #stage{min-height:0}
+  .cover-copy{top:16%;max-width:72vw}
+  .hero-title{font-size:clamp(54px,9vw,70px)}
+  .cover-line{font-size:16px;line-height:2}
+  .dialogue{bottom:118px;min-height:176px;max-height:42dvh;overflow-y:auto}
+  .objective{top:112px;left:28px;right:auto;max-width:340px}
+  .inventory{bottom:24px}
+  .chat-body{height:min(360px,40dvh)}
+}
+@media(max-width:600px){
+  body{overflow-y:hidden}
+  .topbar{height:60px}
+  #stage{height:calc(100dvh - 92px)}
+  .brand{max-width:48%;line-height:1.35;letter-spacing:2px}
+  .cover-copy{top:10%;bottom:auto}
+  .hero-title{font-size:clamp(36px,12vw,48px);letter-spacing:5px;margin:18px 0}
+  .cover-line{font-size:14px;line-height:1.8}
+  .cover-actions{display:flex;flex-direction:column;align-items:flex-start}
+  .primary{min-width:min(220px,86vw)}
+  .chapter-label{left:max(16px,env(safe-area-inset-left));top:16px;max-width:64vw}
+  .chapter-label h2{font-size:18px;margin:5px 0}
+  .objective{left:max(16px,env(safe-area-inset-left));right:16px;top:88px;max-width:none;padding:9px 12px}
+  .dialogue{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:92px;padding:16px 18px;min-height:0;max-height:48dvh}
+  .dialogue-head{margin-bottom:9px;gap:8px}
+  .line-text{min-height:42px;font-size:15px;line-height:1.75}
+  .choices{gap:8px;margin-top:10px}
+  .choice{min-width:100%;padding:10px 12px}
+  .inventory{left:max(14px,env(safe-area-inset-left));right:max(14px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));gap:8px;padding-top:8px;overflow-x:auto}
+  #items{flex:0 0 auto}
+  .item{height:44px;white-space:nowrap}
+  .hotspot{width:84px;height:84px}
+  .hotlabel{top:61px;white-space:normal;text-align:center;max-width:124px;line-height:1.4}
+  .ending{padding:max(64px,12vh) 22px 30px;overflow-y:auto}
+  .ending h2{font-size:clamp(28px,10vw,42px);letter-spacing:5px}
+  .ending p{font-size:14px;line-height:1.9}
+  .panel-actions{flex-wrap:wrap}
+  .modal-card{width:100%;padding:24px 18px;border-radius:0}
+  .chat-shell{max-width:100%}
+  .chat-body{height:min(320px,42dvh)}
+  .footer{height:32px;padding-bottom:env(safe-area-inset-bottom)}
+}
+@media(max-width:380px){
+  .brand{font-size:12px}
+  .tools button{font-size:14px}
+  .hero-title{font-size:34px;letter-spacing:4px}
+  .cover-line{font-size:13px}
+  .cover-note{font-size:9px}
+  .dialogue{padding:14px;bottom:86px}
+  .line-text{font-size:14px}
+}
+@media(max-height:540px) and (orientation:landscape){
+  body{overflow:hidden}
+  .topbar{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .brand{max-width:38%}
+  .cover-copy{left:max(5%,env(safe-area-inset-left));right:45%;top:5%}
+  .hero-title{font-size:clamp(30px,10vh,44px);letter-spacing:4px}
+  .cover-line{font-size:12px;line-height:1.45}
+  .primary{min-width:180px;padding:10px 18px}
+  .chapter-label{left:max(14px,env(safe-area-inset-left));top:10px}
+  .objective{left:auto;right:max(14px,env(safe-area-inset-right));top:10px;max-width:260px}
+  .dialogue{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:58px;max-height:55dvh;padding:12px 16px}
+  .line-text{min-height:28px;font-size:14px;line-height:1.55}
+  .choices{margin-top:6px;flex-direction:row}
+  .choice{min-width:140px;padding:8px 10px}
+  .inventory{left:max(14px,env(safe-area-inset-left));right:max(14px,env(safe-area-inset-right));bottom:max(6px,env(safe-area-inset-bottom));padding-top:5px}
+  .item{height:42px}
+  .modal-card{max-height:calc(100dvh - 16px);padding:18px}
+  .chat-body{height:48dvh}
+}
+@media(hover:none) and (pointer:coarse){
+  button{touch-action:manipulation}
+  .hotspot{min-width:80px;min-height:80px}
+}
